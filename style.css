@@ -1,34 +1,13 @@
-.search-box i {
-  position: absolute;
+.card-img-top{
+  width:80%;
+  height: 40%;
 }
-.icon {
-  margin: 15px;
-  min-width: 50px;
+.card{
+  margin-top: 10px
 }
-.input-field {
-  width: 30%;
-  padding: 10px;
-  text-align: left;
-  margin-left: 10px; 
-  outline: none;
-}
-.font {
-  font-size: 20px;
-  font-weight: 100px;
-  color: black;
-  background-color: white;
-}
-.navbar {
-  background-color: white;
-}
-.filter {
+.filter{
   display: none;
 }
-.region {
-  margin-left: 50%;
-  padding: 10px;
-  outline: none;
-}
-.card-style{
-    width: 18rem;
-}
+
+ 
+ 
