@@ -1,13 +1,13 @@
-.card-img-top{
-  width:80%;
-  height: 40%;
+body{
+  background-color:white;
 }
-.card{
-  margin-top: 10px
+.card {
+  height:500px;
 }
-.filter{
-  display: none;
+.card-img-top {
+  height: 250px
 }
-
- 
- 
+.card-text{
+  max-height: 250px; 
+  size: 1rem;
+}
