@@ -32,7 +32,7 @@
                 <i class="fas fa-search-location"></i>
               </span>
            </div>
-            <input type="text" class="form-control" placeholder="search for a country..." aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text"  id="searchInput"class="form-control" placeholder="search for a country..." aria-label="Username" aria-describedby="basic-addon1">
           </div>
         </form>
     <!-- drop down -->
@@ -60,14 +60,21 @@
         </div>
     </div>
   </div>
-  <div  id="info">
-    <div >
-      <button  id="close">
-        <i class="fas fa-times"></i>
-      </button>
+  <div  id="info" class="container" >
+    <div class="row-info row">
+      <div  id="info" class="container" >
+        <button type="button" class="btn btn-outline-secondary">
+          <i class="fas fa-long-arrow-alt-left"></i>
+          Back
+        </button>
+        <div class="row-info row">
+    <div class="col-6 ml-auto image-info">
       <img src="" alt="" />
-      <div id="info-body"></div>
     </div>
+      <div id="info-body" class="col-4">
+      </div>
+    </div>
+  </div>
   </div>
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

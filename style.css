@@ -8,6 +8,22 @@ body{
   height: 250px
 }
 .card-text{
-  max-height: 250px; 
+  max-height: 250px;
   size: 1rem;
+}
+.row-info{
+  margin-top:15%;
+}
+.image-info{
+  margin-right:10%;
+}
+.countryImg{
+  max-height: 250px;
+  width: 100%;
+  margin-top: 5%;
+  border: 1px solid black;
+}
+.btn{
+  margin-top: 5%;
+   width: 10%;
 }
