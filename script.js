@@ -4,13 +4,13 @@ const backButton = document.querySelector('#backButton')
 const url = `https://restcountries.eu/rest/v2/all`
 const modeSwitch = document.querySelector('#mode')
 const modeName = document.querySelector('#mode-name')
-const alphaCodes = [];
+const alphaCodes = []
 
 window.onload = setup
 
 function setup() {
     getCountriesData()
-    getUserMode()
+
 }
 
 function getCountriesData() {
@@ -19,10 +19,10 @@ function getCountriesData() {
         .then((data) => makePageForCountries(data))
         .catch((error) => console.log(error))
 }
-let countries
+
 
 function makePageForCountries(countriesData) {
-    countries = countriesData
+    const countries = countriesData
     for (let i = 0; i < countries.length; i++) {
         let divResponsive = document.createElement('div')
         divResponsive.className +=
@@ -33,7 +33,7 @@ function makePageForCountries(countriesData) {
             displayInfo(countries[i])
         })
 
-        getAlphaCodes(countries[i]);
+        getAlphaCodes(countries[i])
         let flag = document.createElement('img')
         flag.className = 'card-img-top border border-secondary'
         flag.src = countries[i].flag
@@ -44,7 +44,8 @@ function makePageForCountries(countriesData) {
         countryName.innerHTML = countries[i].name
         let population = document.createElement('p')
         population.className = 'card-text'
-        population.innerHTML = 'Population: ' + formatNumber(countries[i].population)
+        population.innerHTML =
+            'Population: ' + formatNumber(countries[i].population)
         let region = document.createElement('p')
         region.className = 'card-text'
         region.innerHTML = 'Region: ' + countries[i].region
@@ -62,10 +63,11 @@ function makePageForCountries(countriesData) {
         rootElm.appendChild(divResponsive)
     }
 }
-const formatNumber = num => num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+const formatNumber = (num) =>
+    num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 
 function getAlphaCodes(country) {
-    alphaCodes.push({ name: country.name, code: country.alpha3Code });
+    alphaCodes.push({ name: country.name, code: country.alpha3Code })
 }
 
 function displayInfo(country) {
@@ -128,26 +130,28 @@ function displayInfo(country) {
 }
 //get border countries
 function getCountryName(countryCode) {
-    let name = '';
-    alphaCodes.forEach(country => {
+    let name = ''
+    alphaCodes.forEach((country) => {
         if (country.code.toLowerCase() === countryCode.toLowerCase()) {
-            name = country.name;
-            return name;
+            name = country.name
+            return name
         } else return
     })
 
-    return name;
+    return name
 }
 
 function getBorderName(borderCodes) {
-    let name = '';
-    nameArr = [];
-    borderCodes.forEach(code => {
-        name = getCountryName(code);
-        nameArr.push(`${name}`);
+    let name = ''
+    nameArr = []
+    borderCodes.forEach((code) => {
+        name = getCountryName(code)
+        nameArr.push(`<button type="button" class="btn btn-outline-secondary">${name}</button>`)
     })
-
-    return nameArr.join(',');
+    if (nameArr.length === 0) {
+        return "No Border"
+    }
+    return nameArr.join('')
 }
 
 // search Input
@@ -199,15 +203,10 @@ function changeMode(condition) {
     if (condition) {
         document.documentElement.className = 'mode-dark'
         modeName.textContent = 'Light Mode'
-        localStorage.setItem('theme', 'mode-dark')
+
     } else {
         document.documentElement.className = 'mode-light'
         modeName.textContent = 'Dark Mode'
-        localStorage.setItem('theme', 'mode-light')
-    }
-}
 
-function getUserMode() {
-    const userMode = localStorage.getItem('mode')
-    userMode ? changeMode(userMode === 'theme-dark') : ''
+    }
 }
