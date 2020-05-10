@@ -5,12 +5,10 @@ const url = `https://restcountries.eu/rest/v2/all`
 const modeSwitch = document.querySelector('#mode')
 const modeName = document.querySelector('#mode-name')
 const alphaCodes = []
-
 window.onload = setup
 
 function setup() {
     getCountriesData()
-
 }
 
 function getCountriesData() {
@@ -19,7 +17,6 @@ function getCountriesData() {
         .then((data) => makePageForCountries(data))
         .catch((error) => console.log(error))
 }
-
 
 function makePageForCountries(countriesData) {
     const countries = countriesData
@@ -32,7 +29,6 @@ function makePageForCountries(countriesData) {
         countryCard.addEventListener('click', () => {
             displayInfo(countries[i])
         })
-
         getAlphaCodes(countries[i])
         let flag = document.createElement('img')
         flag.className = 'card-img-top border border-secondary'
@@ -84,8 +80,8 @@ function displayInfo(country) {
         <h2 class="mt-sm-3">
         ${country.name}
         </h2>
-        <div class="mt-sm-5 d-flex m-auto justify-content-center">
-        <div class="mr-4 pr-2" id="country-details">
+        <div class="mt-sm-5 d-flex justify-content-center">
+        <div class="mr-1 pr-2" id="country-details">
         <p>
             <strong>Native Name:</strong>
             ${country.nativeName}
@@ -106,25 +102,25 @@ function displayInfo(country) {
             <strong>Capital:</strong>
             ${country.capital}
         </p>
-        <div class = "d-flex m-auto">
-        <p class="d-flex"> <strong>Border Countries:</strong> <p>
-         ${getBorderName(country.borders)}
         </div>
-        </div>
-        <div class = "mr-1" >
-        <p>
+        <div class = " d-flex flex-column" >
+        <p class = "d-flex">
             <strong id="details-right">Top Level Domain:</strong>
             ${country.topLevelDomain[0]}
         </p>
-        <p>
+        <p class = " d-flex">
             <strong id="details-right">Currencies:</strong>
             ${country.currencies.map((currency) => currency.code)}
         </p>
-        <p>
+        <p class = " d-flex">
             <strong id="details-right">Languages:</strong>
             ${country.languages.map((language) => language.name)}
         </p>
         </div>
+        </div>
+        <div class = "mb-sm-1">
+        <p class="d-flex"> <strong>Border Countries:</strong> </p>
+        <p class="d-inline-flex borders"> ${getBorderName(country.borders)} </p>
         </div>
     `
 }
@@ -137,7 +133,6 @@ function getCountryName(countryCode) {
             return name
         } else return
     })
-
     return name
 }
 
@@ -146,14 +141,13 @@ function getBorderName(borderCodes) {
     nameArr = []
     borderCodes.forEach((code) => {
         name = getCountryName(code)
-        nameArr.push(`<button type="button" class="btn btn-outline-secondary">${name}</button>`)
+        nameArr.push(`<button type="button" class="d-flex justify-content-start mr-md-2 btn btn-outline-secondary">${name}</button>`)
     })
     if (nameArr.length === 0) {
         return "No Border"
     }
     return nameArr.join('')
 }
-
 // search Input
 search.addEventListener('input', findCountry)
 
@@ -177,6 +171,8 @@ continents.forEach((menu) => {
             const countryRegion = document.querySelectorAll('.page')
             countryRegion.forEach((region) => {
                 if (region.innerText.includes(value)) {
+                    region.style.display = 'block'
+                } else if (value == "All") {
                     region.style.display = 'block'
                 } else {
                     region.style.display = 'none'
@@ -203,10 +199,8 @@ function changeMode(condition) {
     if (condition) {
         document.documentElement.className = 'mode-dark'
         modeName.textContent = 'Light Mode'
-
     } else {
         document.documentElement.className = 'mode-light'
         modeName.textContent = 'Dark Mode'
-
     }
 }
