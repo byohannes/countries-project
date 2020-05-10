@@ -1,29 +1,112 @@
-body{
-  background-color:white;
+body {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    font-size: 14px;
+    box-sizing: border-box;
 }
+
+::placeholder {
+    color: var(--placeholder-color)!important;
+}
+
+.mode-dark {
+    --primary-color: hsl(0, 0%, 100%);
+    --secondary-color: hsl(207, 26%, 17%);
+    --bg-color: hsl(209, 23%, 22%);
+    --placeholder-color: hsl(0, 0%, 98%);
+}
+
+.mode-light {
+    --primary-color: hsl(207, 26%, 17%);
+    --secondary-color: hsl(0, 0%, 98%);
+    --bg-color: hsl(0, 0%, 100%);
+    --placeholder-color: hsl(0, 0%, 52%);
+}
+
+#navbar {
+    background-color: var(--bg-color)!important;
+}
+
+.form-inline span {
+    color: var(--primary-color)!important;
+    background-color: var(--bg-color)!important;
+}
+
+.form-inline input {
+    color: var(--primary-color)!important;
+    background-color: var(--bg-color)!important;
+}
+
+#navbar a {
+    color: var(--primary-color);
+}
+
+#mode-name {
+    color: var(--primary-color) !important;
+}
+
+#navbarDropdownMenuLink {
+    color: var(--primary-color)!important;
+    background-color: var(--bg-color)!important;
+}
+
+.navbar {
+    color: var(--primary-color)!important;
+    background-color: var(--secondary-color)!important;
+}
+
+.dropdown-item {
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+}
+
+#backButton {
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+}
+
 .card {
-  height:500px;
+    height: 20%;
+    color: var(--primary-color)!important;
+    background-color: var(--bg-color)!important;
 }
+
 .card-img-top {
-  height: 250px
+    height: 250px;
 }
-.card-text{
-  max-height: 250px;
-  size: 1rem;
+
+.card-text {
+    max-height: 250px;
+    size: 1rem;
 }
-.row-info{
-  margin-top:15%;
+
+.row-info {
+    margin-top: 5%;
 }
-.image-info{
-  margin-right:10%;
+
+.image-info {
+    margin-right: 10%;
+    margin-left: 0!important;
 }
-.countryImg{
-  max-height: 250px;
-  width: 100%;
-  margin-top: 5%;
-  border: 1px solid black;
+
+.countryImg {
+    max-height: 350px;
+    width: 100%;
+    margin-top: 5%;
+    border: 1px solid black;
 }
-.btn{
-  margin-top: 5%;
-   width: 10%;
+
+.btn {
+    margin-top: 5%;
+    width: 10%;
+}
+
+#country-details {
+    margin-left: 5%;
+    margin-right: 0!important;
+    padding-right: 0!important;
+}
+
+#details {
+    margin-top: 0!important;
 }
