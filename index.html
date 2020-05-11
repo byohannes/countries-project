@@ -14,14 +14,13 @@
     <nav id="navbar" class=" navbar navbar-expand-lg navbar-light col-12 col-md-12">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Where in the world? <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">
+                    <h3>Where in the world?</h3><span class="sr-only">(current)</span></a>
             </li>
         </ul>
         <p id="mode">
-            <i class="far fa-moon mr-1"></i>
-            <span class="navbar-text text-dark pr-3" id="mode-name">
-          Dark Mode
-        </span>
+            <i class="far fa-moon mt-2 moon"></i>
+            <a href="#" class="navbar-text" id="mode-name">Dark Mode</a>
         </p>
         </div>
     </nav>
@@ -57,6 +56,7 @@
                 </ul>
             </nav>
     </div>
+    <!-- main page section -->
     <div id="show">
         <div class="container">
             <div id="root" class="row">
@@ -66,17 +66,18 @@
     </div>
     </div>
     </div>
-    <div id="info" class="container col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+    <!-- back button -->
+    <div id="info" class="container info">
         <button type="button" id="backButton" class="btn btn-outline-secondary">
         <i class="fas fa-long-arrow-alt-left"></i>
         Back
       </button>
-        <div class="row-info row">
-            <div class="row-info row" id="details">
-                <div class=" ml-auto image-info">
+        <div class="row-info ">
+            <div class="row-info row col-12 d-flex" id="details" class="details">
+                <div class=" ml-auto image-info col-12 col-md-6">
                     <img src="" alt="" />
                 </div>
-                <div id="info-body">
+                <div id="info-body" class="info-body col-12  col-sm-12 col-md-12  col-lg-6">
                 </div>
             </div>
         </div>

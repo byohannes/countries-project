@@ -45,6 +45,11 @@ body {
     background-color: var(--bg-color)!important;
 }
 
+.border-buttons {
+    color: var(--primary-color)!important;
+    background-color: var(--bg-color)!important;
+}
+
 #navbar a {
     color: var(--primary-color);
 }
@@ -97,7 +102,7 @@ body {
 }
 
 .image-info {
-    margin-right: 10%;
+    /* margin-right: 10%; */
     margin-left: 0!important;
 }
 
@@ -131,4 +136,21 @@ body {
 
 .borders {
     width: 1%;
+}
+
+.borders {
+    width: 1%;
+}
+
+.moon {
+    font-size: 20px;
+}
+
+a#mode-name {
+    font-size: 20px;
+}
+
+a#mode-name:hover {
+    background-color: rgb(230, 181, 174);
+    TEXT-DECORATION: none
 }
